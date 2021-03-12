@@ -58,16 +58,19 @@ public class Player {
 После имени класса и перед { необходим пробел
 
 неправильно:
+``` java
 public class Calculator{
-
+```
 
 правильно:
+``` java
 public class Calculator {
-
+```
 
 Поля необходимо размещать в начале класса. При этом все они должны быть сгруппированы в одном месте
 
 неправильно:
+``` java
 public class Wolf {
 
     private String sex;
@@ -82,9 +85,10 @@ public class Wolf {
         return name;
     }
 }
-
+```
 
 правильно:
+``` java
 public class Wolf {
 
     private String sex;
@@ -98,7 +102,7 @@ public class Wolf {
         return name;
     }
 }
-
+```
 
 Отделяйте поля от кода, идущего после них, пустой строкой
 
@@ -114,6 +118,7 @@ public class Resume {
 
 
 правильно:
+``` java
 public class Resume {
 
     private String uuid;
@@ -123,11 +128,12 @@ public class Resume {
         this.uuid = uuid;
     }
 }
-
+```
 
 Группируйте геттеры и сеттеры по именам переменных, для которых они созданы. При этом не “приклеивайте” их друг к другу
 
-		неправильно:		
+неправильно:
+``` java
 public class Jaeger {
 
     private String mark;
@@ -147,9 +153,10 @@ public class Jaeger {
         this.origin = origin;
     }
 }
-
+```
 		
-правильно:		
+правильно:
+``` java
 public class Jaeger {
 
     private String mark;
@@ -171,11 +178,12 @@ public class Jaeger {
         this.origin = origin;
     }
 }
-
+```
 
 Размещайте конструктор(ы) после всех полей
 
 неправильно:
+``` java
 class BankAccount {
     private String name;
 
@@ -187,9 +195,10 @@ class BankAccount {
         this.name = name;
     }
 }
-
+```
 
 правильно:
+``` java
 class BankAccount {
     private String name;
 
@@ -201,10 +210,12 @@ class BankAccount {
         return name;
     }
 }
+```
 
 Размещайте геттеры и сеттеры в порядке следования полей, к которым они относятся
 
 неправильно:
+``` java
 class Player {
 
     private String name;
@@ -226,9 +237,10 @@ class Player {
         this.name = name;
     }
 }
-
+```
 
 правильно:
+``` java
 class Player {
 
     private String name;
@@ -250,70 +262,80 @@ class Player {
         this.number = number;
     }
 }
-
+```
 
 ## <a name="2">Правила для методов</a>
 Имя метода должно быть глаголом или содержать глагол и состоять из одного или более слов. Первым в имени должен идти глагол
 
 неправильно:
+``` java
 void endGame()
 int calculation()
 String playerArray()
-
+```
 
 правильно:
+``` java
 int calculate()
 void clearNumbers()
 void start()
-
+```
 
 Начинайте имена методов с маленькой буквы
 
 неправильно:
+``` java
 char GetLetter()
 void ClearEnteredNumbers()
 Player CreatePlayer()
-
+```
 
 правильно:
+``` java
 char getLetter()
 void clearEnteredNumbers()
 Player createPlayer()
-
+```
 
 Между именем метода и открывающейся круглой скобкой пробел не требуется
+
 неправильно:
+``` java
 public static void main (String[] args)
 public int getIndex (String uuid)
 System.out.println ("Math operator is wrong!")
-
+```
 
 правильно:
+``` java
 public static void main(String[] args)
 public int getIndex(String uuid)
 System.out.println("Math operator is wrong!")
-
+```
 
 После сигнатуры любого метода пустая строка не ставится
 
 неправильно:
+``` java
 public static void main(String[] args) {
 
     int number = 5;
 }
-
+```
 
 правильно:
+``` java
 public static void main(String[] args) {
     int number = 5;
 }
-
+```
 
 *я это называю программерской клаустрофобией. Ей страдают по началу все новички. В интернете полно примеров, где пустая строка ставится. Но не делайте так. Нет никаких правил или обоснований это делать
 
 Между любыми методами всегда оставляйте одну пустую строку
  
 неправильно:
+``` java
 class Jaeger {
     private String name;
     
@@ -331,9 +353,10 @@ class Jaeger {
         // some code
     }
 }
-
+```
 
 правильно:
+``` java
 class Jaeger {
     private String name;
     
@@ -353,11 +376,12 @@ class Jaeger {
         // some code
     }
 }
-
+```
 
 Геттеры и сеттеры для boolean-поля именуются по специальному правилу: для геттера вместо get пишется префикс is, а имя boolean-переменной должно быть прилагательным
 
 правильно:
+``` java
 class Car {
 
     private boolean active;
@@ -370,11 +394,12 @@ class Car {
         this.active = active;
     }
 }
-
+```
 
 Используйте this только при конфликте имен, например в сеттерах (и то не всегда). Если конфликта нет, писать this не нужно
 
 будет работать, но использование this избыточно:
+``` java
 public int getIndex() {
 	return this.index;
 }
@@ -382,17 +407,19 @@ public int getIndex() {
 public void setEnteredNumber(int number) {
     this.enteredNumbers[index] = number;
 }
-
+```
 
 правильно:
+``` java
 public void setIndex(int index) {
 	this.index = index;
 }
-
+```
 
 Размещайте методы в классе в порядке их вызовов, а не хаотично, как получится. Код должен читаться сверху вниз, как текст в книге
 
 неправильно:
+``` java
 private boolean makeMove() {
     inputNumber();
     return compareNumbers();
@@ -409,9 +436,10 @@ public void start() {
 private boolean compareNumbers() {
     return true;
 }
-
+```
 
 правильно:
+``` java
 public void start() {
     makeMove();
 }
@@ -428,256 +456,285 @@ private void inputNumber() {
 private boolean compareNumbers() {
     return true;
 }
-
+```
 
 Если поле является массивом и называется, например enteredNums, то как правильно назвать его сеттер, если он принимает за раз только одно число?
 
-		неправильно:
+неправильно:
+``` java
 private int[] enteredNums;
 private int index;
 
 void setEnteredNums(int nums) {
     enteredNums[index] = nums
 }
-
+```
 
 правильно:
+``` java
 private int[] enteredNums;
 private int index;
 
 void setEnteredNum(int num) {
     enteredNums[index] = num
 }
-
+```
 
 ## <a name="3">Правила для переменных</a>
+
 Давайте переменным осмысленные и понятные имена, глядя на которые, любому читающему код, было бы понятно, какие данные они хранят
 
 неправильно:
+``` java
 char a = '+';
 int b = 10;
 String с = "yes";
-
+```
 
 правильно:
+``` java
 char sign = '+';
 int size = 10;
 String answer = "yes";
-
+```
 
 Объявляйте переменные максимально близко к месту их первого использования. Не группируйте их в начале метода
 
 Имя переменной не должно быть глаголом или содержать глагол
 
 неправильно:
+``` java
 Resume[] getAll = storage.getAll();
-
+```
 
 правильно:
+``` java
 Resume[] resumes = storage.getAll();
 или
 Resume[] AllResume = storage.getAll();
-
-
-
+```
 
 Перед переменной при приведении типа требуется пробел
 
 неправильно:
+``` java
 (char)i
-
+```
 
 правильно:
+``` java
 (char) i
-
+```
 
 Имена переменных пишите с маленькой буквы
 
 неправильно:
+``` java
 int Age;
 int Title;
 int FullName
-
+```
 
 правильно:
+``` java
 int age;
 int title;
 int fullName
-
+```
 
 Аббревиатуры в Java записываются, как имена обычных переменных
 
 неправильно:
+``` java
 int RAM;
 long freqCPU;
 String OS;
-
+```
 
 правильно:
+``` java
 int ram;
 long freqCpu;
 String os;
-
+```
 
 При использовании сокращенной формы инкремента и декремента, после имени переменной пробел не ставится
 
-
-
-		неправильно:
+неправильно:
+``` java
 number ++
 for(int i = 10; i > 0; i --)
-
+```
 		
 правильно:
+``` java
 number++
 for(int i = 10; i > 0; i--)
-
+```
 
 При проверке boolean-значений явно указывать true или false не нужно
 
-		будет работать, но использование true/false избыточно:
+будет работать, но использование true/false избыточно:
+``` java
 if(male == false)
 while(isNext() == true)
 if(isExist(uuid) != true)
+```
 
-
-		правильно:
+правильно:
+``` java
 if(!male)
 while(isNext())
 if(!isExist(uuid))
-
+```
 
 ## <a name="4">Общие правила</a>
+
 Перед и после операторов =, +, -, /, *, ==, !=, <, <=, >, >= требуется пробел
 
-		не правильно:
+не правильно:
+``` java
 System.out.println("дата="+m+"."+d+"."+y);
 int length=5;
 for (int i=0;i<length;i++)
-
+```
 
 правильно:
+``` java
 System.out.println("дата = " + m + "." + d + "." + y);
 int length = 5;
 for (int i = 0; i < length; i++)
-
-
-
+```
 
 Между ){ скобками требуется пробел
 
 неправильно:
+``` java
 public static void main(String[] args){
 for (int i = 10; i > 0; i--){
 if (a > 10){
-
+```
 
 правильно:
+``` java
 public static void main(String[] args) {
 for (int i = 10; i > 0; i--) {
 if (a > 10) {
-
+```
 
 Форматирование фигурных скобок
 
 неправильно (так форматируют в C# и C++):
+``` java
 foo()
 {
 }
-
+```
 
 правильно:
+``` java
 foo() {
 }
-
+```
 
 Форматирование else if
 
 неправильно (это же правило справедливо и для else):
+``` java
 }
 else if (size < storage.length) {
-
+```
 
 правильно:
+``` java
 } else if (size < storage.length) {
-
+```
 
 Форматирование цикла do-while
 
 неправильно:
+``` java
 do {
     // some code
 }
 while (answer.equals("yes"));
-
+```
 
 правильно:
+``` java
 do {
     // some code
 } while (answer.equals("yes"));
-
+```
 
 Если ветка if-else или тело цикла состоит из одного выражения, всегда заключайте их в {}. Это поможет избежать трудно уловимых багов
 
 плохо:
+``` java
 if (doc.isImportant)
     send(doc);
 else
     System.out.println("Throw out the trash");
     delete(doc);
-
-
+```
 
 плохо:
+``` java
 while(number < 5)
     System.out.println("number less");
     number++;
-
+```
 
 хорошо:
+``` java
 if (doc.isImportant) {
     send(doc);
 } else {
     log.info("Throw out the trash");
     delete(doc);
 }
-
+```
 
 хорошо:
+``` java
 while(number < 5) {
     System.out.println("number less");
     number++;
 }
-
+```
 
 После , и ; требуется пробел
 
 неправильно:
+``` java
 public void addAttempt(int number,int i)
 for (int i = 0;i < storage.length;i++)
-
+```
 
 правильно:
+``` java
 public void addAttempt(int number, int i)
 for (int i = 0; i < storage.length; i++)
-
+```
 
 После ( и перед ) скобками пробел не требуется
 
 неправильно:
+``` java
 for ( int i = 0; i < 21; i++ )
 compareNumber( String number )
-
-
+```
 
 правильно:
+``` java
 for (int i = 0; i < 21; i++)
 compareNumber(String number)
-
+```
 
 Если класс называется Player, то у его полей или методов слово Player уже использовать не нужно, т.к. и так понятно, что все, что там находится относится к Player, а не к Cat или к колбасе :)
 
 неправильно:
+``` java
 public class Player {
 	
 	private int[] playerNumbers = new int[10];
@@ -686,9 +743,10 @@ public class Player {
 		return playerNumbers[index];
 	}
 }
-
+```
 
 правильно:
+``` java
 public class Player {
 	
 	private int[] numbers = new int[10];
@@ -697,67 +755,74 @@ public class Player {
 		return numbers[index];
 	}
 }
-
+```
 
 После package и import требуется пустая строка
 
 неправильно:
+``` java
 package com.webapp.storage;
 import java.util.Scanner;
 public class ArrayStorage {
-
+```
 
 правильно:
+``` java
 package com.webapp.storage;
 
 import java.util.Scanner;
 
 public class ArrayStorage {
-
+```
 
 Размещайте комментарии над комментируемым кодом, а не справа от него. Комментарий должен начинаться с той же позиции, что и код
 
 неправильно:
+``` java
 int sumOdd = 10; // сумма нечетных чисел
-
+```
 
 правильно:
+``` java
 // сумма нечетных чисел
 int sumOdd = 10;
-
+```
 	
 При создании переменной для хранения ссылки на массив и самого массива, размещайте [] в Java-стиле, а не в Си или С++, а также не ставьте лишних пробелов
 
-
-
 неправильно:
+``` java
 int numbers[]
 int [] numbers
 int numbers []
 new int [10]
-
+```
 
 правильно:
+``` java
 int[] numbers = new int[10]
-
+```
 
 Имя boolean-переменной должно быть прилагательным
 
-		неправильно:
+неправильно:
+``` java
 boolean security
 boolean answer
 boolean continue
+```
 
-
-		правильно:
+правильно:
+``` java
 boolean active
 boolean current
 boolean alive
-
+```
 
 Не забывайте код, вложенный в класс, метод, цикл и другие конструкции, которые имеют тело в виде { } каждый раз сдвигать вправо на 4 пробела (или один tab) относительно начала этой конструкции
 
-		неправильно:
+неправильно:
+``` java
 public class Person {
 
     int age = 25;
@@ -768,10 +833,10 @@ public class Person {
     }
 }
 }
-
-
+```
 		
 правильно:
+``` java
 public class Person {
 
     int age = 25;
@@ -782,3 +847,4 @@ public class Person {
         }
     }
 }
+```
