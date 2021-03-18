@@ -850,3 +850,19 @@ public class Person {
     }
 }
 ```
+
+- #### Если имя переменной/метода/класса состоит из более, чем одного слова, то для именование используется camelCase
+
+неправильно:
+``` java
+int playeranswer
+class Guessnumbermain
+void addnumber()
+```
+
+правильно:
+``` java
+int playerAnswer
+class GuessNumberMain
+void addNumber()
+```
