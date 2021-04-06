@@ -403,7 +403,7 @@ class Car {
 будет работать, но использование this избыточно:
 ``` java
 public int getIndex() {
-	return this.index;
+    return this.index;
 }
 
 public void setEnteredNumber(int number) {
@@ -414,7 +414,7 @@ public void setEnteredNumber(int number) {
 правильно:
 ``` java
 public void setIndex(int index) {
-	this.index = index;
+    this.index = index;
 }
 ```
 
@@ -592,7 +592,7 @@ if(!isExist(uuid))
 
 ## <a name="4">Общие правила</a>
 
-- #### Перед и после операторов =, +, -, /, *, ==, !=, <, <=, >, >= требуется пробел
+- #### Перед и после операторов =, +, -, /, *, %, ==, !=, <, <=, >, >= требуется пробел
 
 не правильно:
 ``` java
@@ -739,11 +739,11 @@ compareNumber(String number)
 ``` java
 public class Player {
 	
-	private int[] playerNumbers = new int[10];
+    private int[] playerNumbers = new int[10];
 
-	public int getPlayerNumber(int index) {
-		return playerNumbers[index];
-	}
+    public int getPlayerNumber(int index) {
+        return playerNumbers[index];
+    }
 }
 ```
 
@@ -751,11 +751,11 @@ public class Player {
 ``` java
 public class Player {
 	
-	private int[] numbers = new int[10];
+    private int[] numbers = new int[10];
 
-	public int getNumber(int index) {
-		return numbers[index];
-	}
+    public int getNumber(int index) {
+        return numbers[index];
+    }
 }
 ```
 
