@@ -265,6 +265,48 @@ class Player {
 }
 ```
 
+- #### Размещайте конструкторы в классе в порядке, зависящем от принимаемых ими числа аргументов: от меньшего к большему
+
+неправильно:
+``` java
+class Player {
+
+    Resume(String name, int number) {}
+
+    Resume(String name) {}
+
+    Resume(String name, int number, String uuid) {}
+}
+```
+
+правильно:
+``` java
+class Player {
+
+    Resume(String name) {}
+
+    Resume(String name, int number) {}
+
+    Resume(String name, int number, String uuid) {}
+}
+```
+
+- #### Если геттеры не используются, то в классе их можне не писать
+
+- #### Между именем конструктора и открывающейся круглой скобкой пробел не требуется
+
+неправильно:
+``` java
+Player (String name)
+Resume (String uuid)
+```
+
+правильно:
+``` java
+Player(String name)
+Resume(String uuid)
+```
+
 ## <a name="2">Правила для методов</a>
 
 - #### Имя метода должно быть глаголом или содержать глагол и состоять из одного или более слов. Первым в имени должен идти глагол
@@ -590,11 +632,27 @@ while(isNext())
 if(!isExist(uuid))
 ```
 
+- #### Инициализируйте переменные (если это возможно) в строке их объявления, а не где-то ниже в коде
+		
+неправильно:
+``` java
+double num1;
+char sign;
+num1 = 4;
+sign = '*';
+```
+
+правильно:
+``` java
+double num1 = 4;
+char sign = '*';
+```
+
 ## <a name="4">Общие правила</a>
 
 - #### Перед и после операторов =, +, -, /, *, %, ==, !=, <, <=, >, >= требуется пробел
 
-не правильно:
+неправильно:
 ``` java
 System.out.println("дата="+m+"."+d+"."+y);
 int length=5;
@@ -865,4 +923,51 @@ void addnumber()
 int playerAnswer
 class GuessNumberMain
 void addNumber()
+```
+
+- #### Стандартное именование для счетчиков в цикле for - это i, j, k. Последние два используются для вложенных циклов
+плохо:
+``` java
+for(a = 0; a < 3; a++) {    
+}
+```
+
+плохо:
+``` java
+for(d = 0; d < 10; d++) {
+    for(c = 0; c < 4; c++) {    
+    }
+}
+```
+
+хорошо:
+``` java
+for(i = 0; i < 3; i++) {    
+}
+```
+
+хорошо:
+``` java
+for(i = 0; i < 10; i++) {
+    for(j = 0; j < 4; j++) {    
+    }    
+}
+```
+
+- #### При переносе строки каждую следующую ее подстроку необходимо смещать вправо на 8 пробелов относительно первой строки
+
+неправильно:
+``` java
+System.out.println("Characteristics:\n" +
+"age = " + age + "\n" +
+"name = " + name + "\n" +
+"color = " + color);
+```
+
+правильно:
+``` java
+System.out.println("Characteristics:\n" +
+        "age = " + age + "\n" +
+        "name = " + name + "\n" +
+        "color = " + color);
 ```
