@@ -291,7 +291,25 @@ class Player {
 }
 ```
 
-- #### Если геттеры не используются, то в классе их можне не писать
+- #### В одной строке объявляйте за раз только одну переменную
+
+неправильно:
+``` java
+class Person {
+    String uuid, name;
+    double height, weight;
+}
+```
+
+правильно:
+``` java
+class Person {
+    String uuid;
+    String name;
+    double height;
+    double weight;
+}
+```
 
 - #### Между именем конструктора и открывающейся круглой скобкой пробел не требуется
 
@@ -306,6 +324,8 @@ Resume (String uuid)
 Player(String name)
 Resume(String uuid)
 ```
+
+- #### Если геттеры не используются, то в классе их можне не писать
 
 ## <a name="2">Правила для методов</a>
 
@@ -458,6 +478,20 @@ public void setEnteredNumber(int number) {
 public void setIndex(int index) {
     this.index = index;
 }
+```
+
+- #### При именовании переменных, для разделения слов, нижнее подчеркивание _ ставьте только у констант. Все остальные переменные должны именоваться с использованием camelCase
+
+неправильно:
+``` java
+int hidden_number;
+String player_answer;
+```
+
+правильно:
+``` java
+int hiddenNumber;
+String playerAnswer;
 ```
 
 - #### Размещайте методы в классе в порядке их вызовов, а не хаотично, как получится. Код должен читаться сверху вниз, как текст в книге
