@@ -23,7 +23,7 @@ class CalculateSum
 правильно:
 ``` java
 class SortedArrayStorage
-class CalcuatorMain
+class CalculatorMain
 class Resume
 ```
 
