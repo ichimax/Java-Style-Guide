@@ -543,8 +543,8 @@ private boolean compareNumbers() {
 private int[] enteredNums;
 private int index;
 
-void setEnteredNums(int nums) {
-    enteredNums[index] = nums
+void setEnteredNums(int enteredNums) {
+    this.enteredNums[index] = enteredNums;
 }
 ```
 
@@ -553,8 +553,8 @@ void setEnteredNums(int nums) {
 private int[] enteredNums;
 private int index;
 
-void setEnteredNum(int num) {
-    enteredNums[index] = num
+void setEnteredNum(int enteredNum) {
+    enteredNums[index] = enteredNum;
 }
 ```
 
