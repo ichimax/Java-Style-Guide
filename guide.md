@@ -733,7 +733,7 @@ foo() {
 
 - #### Форматирование else if
 
-неправильно (это же правило справедливо и для else):
+неправильно (применимо и для else без if):
 ``` java
 }
 else if (size < storage.length) {
@@ -744,6 +744,19 @@ else if (size < storage.length) {
 } else if (size < storage.length) {
 ```
 
+- #### Размещение if относительно else
+
+плохо (зачем тратить лишнюю строку под if):
+``` java
+} else {
+    if (number > randomNumber) {	
+```
+	
+хорошо:
+``` java
+} else if (number > randomNumber) {
+````
+	
 - #### Форматирование цикла do-while
 
 неправильно:
