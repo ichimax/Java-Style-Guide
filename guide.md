@@ -731,9 +731,24 @@ foo() {
 }
 ```
 
-- #### Форматирование else if
+- #### Форматирование else и else if
 
-неправильно (применимо и для else без if):
+неправильно:
+``` java
+}
+else {
+    System.out.println("Exit");
+}
+```
+
+правильно:
+``` java
+} else {
+    System.out.println("Exit");
+}
+```
+	
+неправильно:
 ``` java
 }
 else if (size < storage.length) {
