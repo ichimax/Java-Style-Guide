@@ -759,8 +759,6 @@ else if (size < storage.length) {
 } else if (size < storage.length) {
 ```
 
-- #### Размещение if относительно else
-
 плохо (зачем тратить лишнюю строку под if):
 ``` java
 } else {
