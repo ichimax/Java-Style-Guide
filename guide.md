@@ -641,29 +641,29 @@ String os;
 неправильно:
 ``` java
 number ++
-for(int i = 10; i > 0; i --)
+for (int i = 10; i > 0; i --)
 ```
 		
 правильно:
 ``` java
 number++
-for(int i = 10; i > 0; i--)
+for (int i = 10; i > 0; i--)
 ```
 
 - #### При проверке boolean-значений явно указывать true или false не нужно
 
 будет работать, но использование true/false избыточно:
 ``` java
-if(male == false)
-while(isNext() == true)
-if(isExist(uuid) != true)
+if (male == false)
+while (isNext() == true)
+if (isExist(uuid) != true)
 ```
 
 правильно:
 ``` java
-if(!male)
-while(isNext())
-if(!isExist(uuid))
+if (!male)
+while (isNext())
+if (!isExist(uuid))
 ```
 
 - #### Инициализируйте переменные (если это возможно) в строке их объявления, а не где-то ниже в коде
@@ -817,7 +817,7 @@ if (doc.isImportant) {
 
 хорошо:
 ``` java
-while(number < 5) {
+while (number < 5) {
     System.out.println("number less");
     number++;
 }
@@ -988,28 +988,28 @@ void addNumber()
 - #### Стандартное именование для счетчиков в цикле for - это i, j, k. Последние два используются для вложенных циклов
 плохо:
 ``` java
-for(a = 0; a < 3; a++) {    
+for (a = 0; a < 3; a++) {    
 }
 ```
 
 плохо:
 ``` java
-for(d = 0; d < 10; d++) {
-    for(c = 0; c < 4; c++) {    
+for (d = 0; d < 10; d++) {
+    for (c = 0; c < 4; c++) {    
     }
 }
 ```
 
 хорошо:
 ``` java
-for(i = 0; i < 3; i++) {    
+for (i = 0; i < 3; i++) {    
 }
 ```
 
 хорошо:
 ``` java
-for(i = 0; i < 10; i++) {
-    for(j = 0; j < 4; j++) {    
+for (i = 0; i < 10; i++) {
+    for (j = 0; j < 4; j++) {    
     }    
 }
 ```
