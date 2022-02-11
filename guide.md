@@ -317,12 +317,14 @@ class Person {
 ``` java
 Player (String name)
 Resume (String uuid)
+new Cat ();
 ```
 
 правильно:
 ``` java
 Player(String name)
 Resume(String uuid)
+new Cat();
 ```
 
 - #### Если геттеры не используются, то в классе их можно не писать
